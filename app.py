@@ -13,8 +13,8 @@ def sms_reply():
     """Respond to incoming calls with a simple text message."""
     # Fetch the message
     msg = request.form.get('Body')
+    resp = MessagingResponse()
     if msg == 'start':
-        resp = MessagingResponse()
         resp.message("Hello,Welcome to Phirlo Ltd. We are here to help you with your queries. Please select an option from the menu below.")
         resp.message("1. Register")
         resp.message("2. Declutter your old clothes")
@@ -22,8 +22,8 @@ def sms_reply():
     
 
     # # Create reply
-    # resp = MessagingResponse()
-    # resp.message("You said: {}".format(msg))
+    
+    resp.message("You said: {}".format(msg))
 
     return str(resp)
 
